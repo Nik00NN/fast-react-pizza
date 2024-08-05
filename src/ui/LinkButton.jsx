@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-const className = "text-sm text-blue-500 hover:text-blue-700 hover:underline";
+const className = "text-sm text-stone-500 hover:text-stone-900 hover:underline";
 
 const LinkButton = ({ children, to }) => {
   const navigate = useNavigate();

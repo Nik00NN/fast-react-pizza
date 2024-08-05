@@ -9,13 +9,21 @@ const styles = {
   secondary:
     "inline-block px-4 py-2.5 md:px-6 md:py-3.5 rounded-md border-2 border-stone-300 font-semibold uppercase tracking-wide text-stone-400 transition-colors duration-500 hover:bg-stone-500 hover:text-stone-900 focus:outline-none ",
 };
-const Button = ({ children, disabled, to, type }) => {
+const Button = ({ children, disabled, to, type, onClick }) => {
   if (to)
     return (
       <Link className={styles[type]} to={to}>
         {children}
       </Link>
     );
+
+  if (onClick)
+    return (
+      <button onClick={onClick} disabled={disabled} className={styles[type]}>
+        {children}
+      </button>
+    );
+
   return (
     <button disabled={disabled} className={styles[type]}>
       {children}
